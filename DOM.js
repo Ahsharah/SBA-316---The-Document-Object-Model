@@ -25,5 +25,39 @@ function addTask() {
     if (taskText !== '') {
         // Create new list item
         const li = document.createElement('li');
+
+        // Create and append category span
+        const categorySpan = document.createElement('span');
+        textSpan.textContent = taskText;
+        textSpan.className = 'task-text';
+        li.appendChild(textSpan);
+
+        // Create and append delete button
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.className = 'delete-btn';
+        li.appendChild(deleteBtn);
+
+        // Add event listener to the list item for toggling completion
+        li.addEventListener('click', toggleTask);
+
+        // Append the new list item to the todo list
+        todoList.appendChild(li);
+
+        // Clear the input field
+        todoInput.value = '';
     }
+}
+
+// Function to toggle task completion
+function toggleTask(e) {
+    if (e.target.tagName !== 'BUTTON') {
+        e.currentTarget.classList.toggle('completed');
+    }
+}
+
+// Function to delete a task
+function deleteTask(e) {
+    const li = e.target.parentNode;
+    todoList.removeChild(li);
 }
