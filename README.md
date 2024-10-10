@@ -6,7 +6,7 @@ MyLife To-Do List Application
 
 Description -
 
-    My Life To-Do List is a simple, interactive web application designed to help users manage their daily tasks. It's tailored for a 30-something young lady of Black and Hispanic descent, focusing on categories such as self-care, traveling, homework for classes, and exercise.
+    My Life To-Do List is a simple, interactive web application designed to help users manage their daily tasks. It's tailored for a 30-something, focusing on categories such as self-care, traveling, homework for classes, and exercise.
 
 Features -
 
@@ -63,4 +63,3 @@ Future Enhancements
     Implement task editing functionality
     Add due dates for tasks
     Create task priority levels
-

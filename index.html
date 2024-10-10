@@ -10,17 +10,21 @@
     <div class="container">
         <h1>MyLife To-Do List</h1>
         <form id="todo-form">
-            <input type="text" id="todo-input" placeholder="Add a new task..." required>
+            <input type="text" id="todo-input" placeholder="Add a new task..." required minlength="5">
             <select id="todo-category">
-                <option value="self-care">Self-Care</option>
-                <option value="travel">Travel</option>
-                <option value="school">School</option>
-                <option value="exercise">Exercise</option>
-                <option value="other">Other</option>
+                <option value="Self-Care">Self-Care</option>
+                <option value="Travel">Travel</option>
+                <option value="School">School</option>
+                <option value="Exercise">Exercise</option>
+                <option value="Other">Other</option>
             </select>
             <button type="submit">Add Task</button>
         </form>
-        <ul id="todo-list"></ul>
+        <p id="error-message"></p>
+        <div id="task-container">
+            <select id="task-list" size="10"></select>
+            <button id="delete-task">Delete Selected Task</button>
+        </div>
     </div>
     <script src="DOM.js"></script>
 </body>
