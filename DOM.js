@@ -3,7 +3,6 @@ const todoForm = document.getElementById('todo-form');
 const todoInput = document.getElementById('todo-input');
 const todoCategory = document.getElementById('todo-category');
 const todoList = document.getElementById('todo-list');
-const deleteButtons = document.querySelectorAll('.delete-btn');
 
 // Event listener for form submission
 todoForm.addEventListener('submit', function(e) {
@@ -15,18 +14,12 @@ todoForm.addEventListener('submit', function(e) {
     addTask();
 });
 
-// Add event listeners to existing delete buttons
-deleteButtons.forEach(button => {
-    button.addEventListener('click', deleteTask);
-});
-
 // Function to add a task
 function addTask() {
     const taskText = todoInput.value.trim();
     const taskCategory = todoCategory.value;
 
     if (taskText !== '') {
-        const fragment = document.createDocumentFragment();
         const li = document.createElement('li');
         
         const categorySpan = document.createElement('span');
@@ -52,9 +45,7 @@ function addTask() {
         li.addEventListener('click', toggleTask);
         deleteBtn.addEventListener('click', deleteTask);
 
-        fragment.appendChild(li);
-        todoList.appendChild(fragment);
-
+        todoList.appendChild(li);
         todoInput.value = '';
     }
 }
@@ -63,17 +54,17 @@ function addTask() {
 function toggleTask(e) {
     if (e.target.tagName !== 'BUTTON') {
         e.currentTarget.classList.toggle('completed');
-        e.currentTarget.setAttribute('data-completed', e.currentTarget.classList.contains('completed'));
     }
 }
 
 // Function to delete a task
 function deleteTask(e) {
+    e.stopPropagation();  // Prevent triggering the toggleTask
     const li = e.target.closest('li');
-    todoList.removeChild(li);
+    li.remove();
 }
 
-// BOM method to show a welcome message
+// Welcome message on page load
 window.onload = function() {
     alert('Welcome to your To-Do List!');
 };

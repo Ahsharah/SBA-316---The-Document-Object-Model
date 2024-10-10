@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Life To-Do List</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>MyLife To-Do List</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>My Life To-Do List</h1>
+        <h1>MyLife To-Do List</h1>
         <form id="todo-form">
-            <input type="text" id="todo-input" placeholder="Add a new task..." required minlength="3">
+            <input type="text" id="todo-input" placeholder="Add a new task..." required>
             <select id="todo-category">
                 <option value="self-care">Self-Care</option>
                 <option value="travel">Travel</option>
                 <option value="school">School</option>
                 <option value="exercise">Exercise</option>
-                <option value="home decor">Home Decor</option>
                 <option value="other">Other</option>
             </select>
             <button type="submit">Add Task</button>
         </form>
         <ul id="todo-list"></ul>
     </div>
-    <script src="js/script.js"></script>
+    <script src="DOM.js"></script>
 </body>
 </html>
