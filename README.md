@@ -26,7 +26,7 @@ Technologies Used
 Installation
 
     Clone the repository to your local machine:
-    Copygit clone [Your Repository URL]
+    [https://github.com/Ahsharah/SBA-316---The-Document-Object-Model?tab=readme-ov-file]
 
     Navigate to the project directory:
     Copycd mylife-todo-list
